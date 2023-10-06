@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="../assets/style/task.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+</head>
+<body>
+  <nav>
+    <!-- <h1><%= locals.username %></h1> -->
+    <div>
+      <img src="../assets/images/profile.jpg" alt="profileImg">
+      <h1><%= locals.username %></h1>
+    </div>
+    <form action="/user/logout" method="post">
+      <button type="submit">Logout</button>
+    </form>
+  </nav>
+    <div class="container">
+      <div class="main">
+        <h1>Your Tasks</h1>
+        <div class="add-task">
+          <form action="/tasks/add-new" method="POST" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="task" placeholder="Add a task" required>
+            <button type="submit">Add</button>
+          </form>
+          <div class="tasks">
+            <% if (locals.tasks) { %>
+                <% tasks.forEach(task => { %>
+                      <div class="taskAndIcons">
+                        <p class="task"><%= task.title %></p>
+                        <div class="icons">
+                          <img src="../assets/images/edit.png" alt="updte" task-id="<%= task._id %>" class="update-icon">
+                          <img src="../assets/images/delete.png" alt="delete" task-id="<%= task._id %>" class="delete-icon">
+                        </div>
+                        </form>
+                      </div>
+                <% }) %>
+            <% } %>
+          </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="../assets/scripts/app.js"></script>
+</body>
+</html>

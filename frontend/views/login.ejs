@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="../assets/style/user.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+          <h1>Login</h1>
+          <div class="login-form">
+            <form action="/user/login" method="POST" enctype="application/x-www-form-urlencoded">
+                <div>
+                    <label for="username">USERNAME</label>
+                    <input type="text" name="username" placeholder="username" required>
+                </div>
+                <div>
+                    <label for="password">PASSWORD</label>
+                    <input type="text" name="password" placeholder="pass@123" required>
+                </div>
+                <button type="submit">Login</button>
+                <div class="a">
+                    <a href="/user/register"><span >Don't have an accound? Register</span></a>
+                    <a href="/">Back to home</a>
+                </div>
+            </form>
+        </div>
+      </div>
+</body>
+</html>
